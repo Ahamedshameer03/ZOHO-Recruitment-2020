@@ -1,0 +1,50 @@
+
+#include <iostream>
+
+
+using namespace std;
+
+int snakeMatrix (int m)
+{
+    int m2=m*2;
+
+    int snakeV=0;
+    for(int i=1;i<=m;i++)
+    {
+        for(int j=1;j<=m2-i;j++)
+        {
+            switch(bool(j<=m-i))
+            {
+                case true: cout<<" ";break;
+                
+                case false: {
+                                switch(bool(i%2==1))
+                                {
+                                  case true: {
+                                              snakeV++;
+                                              cout<<snakeV;
+                                              break;
+                                             } 
+                
+                                 case false: {
+                                                cout<<snakeV;
+                                                 snakeV--;
+                                                 break;
+                                            } 
+                                }
+                                break;
+                            }
+            }
+            
+            
+        }snakeV+=m;
+        cout<<endl;
+    }
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    snakeMatrix(n);
+}
