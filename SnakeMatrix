@@ -1,0 +1,25 @@
+
+#include <iostream>
+
+using namespace std;
+
+int snakeMatrix (int m)
+{
+    int m2=m*2;
+    int snakeV=0;
+    for(int i=0;i<m;i++)
+    {
+        for(int j=1;j<=m2-i;j++)
+        {
+            (j<=m-i)  ?  { cout<<" "; }  :  { (i%2==1) ? { snakeV++; cout<<snakeV } : { cout<<snakeV; snakeV--;} }
+        }snakeV+=m;
+        cout<<endl;
+    }
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    snakeMatrix(n);
+}
